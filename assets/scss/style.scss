@@ -1,0 +1,132 @@
+/* Colors */
+
+$white: hsl(0, 0%, 100%);
+$light-pink: hsl(275, 100%, 97%);
+$grayish-purple: hsl(292, 16%, 49%);
+$dark-purple: hsl(292, 42%, 14%);
+$purple: #ad28eb;
+
+/* Font Weights */
+
+$weight-normal: 400;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+/* Font Family */
+$ff: 'Work Sans';
+
+/* Mixins */
+
+@mixin font_family($src, $weight) {
+    font-family: "Work Sans";
+    src: $src;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+/* Font Faces */
+
+@font-face {
+    @include font_family(url("../fonts/WorkSans-Regular.ttf") format("ttf"), $weight-normal);
+}
+
+@font-face {
+    @include font_family(url("../fonts/WorkSans-SemiBolf.ttf") format("ttf"), $weight-semibold);
+}
+
+@font-face {
+    @include font_family(url("../fonts/WorkSans-Bold.ttf") format("ttf"), $weight-bold);
+}
+
+/* Global Styles */
+
+body {
+    font-size: 16px;
+    margin: 0;
+    background-color: $light-pink;
+    font-family: $ff;
+    font-weight: $weight-normal;
+
+    #bg-pattern {
+        background-image: url('../images/background-pattern-desktop.svg');
+        height: 30vh;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    justify-items: center;
+    align-content: center;
+    grid-template-rows: 1fr;
+
+    @media screen and (max-width: 538px) {
+        grid-template-columns: 1fr;
+        margin: 0 2.5rem;
+    }
+}
+
+.card {
+    grid-column: 2;
+    width: 100%;
+    max-width: 600px;
+    background-color: $white;
+    padding: 2rem 2rem 1rem;
+    border-radius: 10px;
+    position: relative;
+    top: -5rem;
+    left: 0;
+    z-index: 1200;
+
+    &-title {
+        align-items: center;
+        display: flex;
+        gap: 1.5rem;
+        font-weight: $weight-bold;
+        font-size: 40px;
+        margin-top: 15px;
+    }
+}
+
+.accordion {
+    padding: 10px 0;
+    border-bottom: 1px solid $light-pink;
+
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    &-header {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        font-weight: $weight-semibold;
+        padding: 1rem 0;
+        color: $dark-purple;
+        text-decoration: none;
+        cursor: pointer;
+        
+        &:hover {
+            color: $purple;
+        }
+    }
+
+    &-body {
+        color: $grayish-purple;
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}

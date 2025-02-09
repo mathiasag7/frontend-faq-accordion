@@ -1,0 +1,109 @@
+/* Colors */
+/* Font Weights */
+/* Font Family */
+/* Mixins */
+/* Font Faces */
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/WorkSans-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/WorkSans-SemiBolf.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/WorkSans-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+/* Global Styles */
+body {
+  font-size: 16px;
+  margin: 0;
+  background-color: hsl(275, 100%, 97%);
+  font-family: "Work Sans";
+  font-weight: 400;
+}
+body #bg-pattern {
+  background-image: url("../images/background-pattern-desktop.svg");
+  height: 30vh;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  justify-items: center;
+  align-content: center;
+  grid-template-rows: 1fr;
+}
+@media screen and (max-width: 538px) {
+  main {
+    grid-template-columns: 1fr;
+    margin: 0 2.5rem;
+  }
+}
+
+.card {
+  grid-column: 2;
+  width: 100%;
+  max-width: 600px;
+  background-color: hsl(0, 0%, 100%);
+  padding: 2rem 2rem 1rem;
+  border-radius: 10px;
+  position: relative;
+  top: -5rem;
+  left: 0;
+  z-index: 1200;
+}
+.card-title {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 15px;
+}
+
+.accordion {
+  padding: 10px 0;
+  border-bottom: 1px solid hsl(275, 100%, 97%);
+}
+.accordion:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.accordion-header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  padding: 1rem 0;
+  color: hsl(292, 42%, 14%);
+  text-decoration: none;
+  cursor: pointer;
+}
+.accordion-header:hover {
+  color: #ad28eb;
+}
+.accordion-body {
+  color: hsl(292, 16%, 49%);
+  display: none;
+}
+.accordion .show {
+  display: block;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=style.css.map */
